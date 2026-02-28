@@ -72,6 +72,32 @@ body {
 }
 .btn-outline:hover { background: var(--accent-lt); color: var(--navy); border-color: var(--navy); }
 
+.btn-disabled {
+  background: transparent;
+  color: var(--border);
+  border: 1.5px solid var(--border);
+  cursor: default;
+  position: relative;
+}
+.btn-disabled:hover::after,
+.paper-link-disabled:hover::after,
+.link-disabled:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--navy);
+  color: #fff;
+  font-size: .75rem;
+  white-space: nowrap;
+  padding: .3rem .6rem;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 10;
+}
+.btn-disabled:hover { background: transparent; transform: none; }
+
 /* ── NAV ───────────────────────────────────────────────────────────────────── */
 header {
   position: sticky;
@@ -134,20 +160,14 @@ header nav {
   align-items: start;
 }
 
-.photo-placeholder {
+.hero-photo img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background: var(--accent-lt);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-serif);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--accent);
+  object-fit: cover;
+  object-position: center top;
   border: 2px solid var(--border);
-  /* Replace with: <img src="photo.jpg" alt="Ryan Bruno" style="..."> */
+  display: block;
 }
 
 .hero-text h1 {
@@ -226,6 +246,7 @@ header nav {
   border-radius: 20px;
 }
 .working-paper  { background: #fef3c7; color: #92400e; }
+.data-collection { background: #e0f2fe; color: #075985; }
 .lit-review     { background: #e0e7ff; color: #3730a3; }
 .published      { background: #d1fae5; color: #065f46; }
 .under-review   { background: #fee2e2; color: #991b1b; }
@@ -274,6 +295,24 @@ header nav {
   transition: background .15s, color .15s;
 }
 .paper-link:hover { background: var(--accent); color: #fff; }
+
+.paper-link-disabled {
+  font-size: .8rem;
+  font-weight: 500;
+  color: var(--border);
+  border: 1px solid var(--border);
+  padding: .2rem .6rem;
+  border-radius: 4px;
+  cursor: default;
+  position: relative;
+}
+
+.link-disabled {
+  color: var(--border);
+  cursor: default;
+  position: relative;
+  text-decoration: none;
+}
 
 /* ── CV ────────────────────────────────────────────────────────────────────── */
 .cv-section {
@@ -370,6 +409,13 @@ header nav {
   text-decoration: none;
 }
 .contact-block a:hover { text-decoration: underline; }
+
+.contact-note {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-top: .5rem;
+  line-height: 1.6;
+}
 
 /* ── FOOTER ────────────────────────────────────────────────────────────────── */
 footer {
