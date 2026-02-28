@@ -389,6 +389,10 @@ header nav {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
+.contact-grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 580px;
+}
 
 .contact-block h3 {
   font-size: .75rem;
