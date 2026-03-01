@@ -98,6 +98,25 @@ body {
 }
 .btn-disabled:hover { background: transparent; transform: none; }
 
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background .2s, color .2s, border-color .2s, transform .1s;
+}
+.btn-icon:hover {
+  background: var(--accent);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
 /* ── NAV ───────────────────────────────────────────────────────────────────── */
 header {
   position: sticky;
