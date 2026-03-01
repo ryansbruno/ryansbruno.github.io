@@ -195,9 +195,24 @@ header nav {
 
 .hero-links {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: .6rem;
   margin-top: 1.4rem;
+}
+
+.hero-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem;
+}
+
+.links-label {
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 /* ── RESEARCH ──────────────────────────────────────────────────────────────── */
